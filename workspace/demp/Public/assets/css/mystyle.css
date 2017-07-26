@@ -1,0 +1,13 @@
+.card{
+    background-color: #FFFFFF;
+}
+.iconAlarm{
+     color: #ff0000;
+}
+.iconAlarm:visited{
+    color: #ff0000;
+}
+.dropdown-menu > li > a:hover{
+    z-index: 999999;
+    color: #000000;
+}

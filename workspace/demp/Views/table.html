@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Must Card</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="../Public/assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="../Public/assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Paper Dashboard core CSS    -->
+    <link href="../Public/assets/css/paper-dashboard.css" rel="stylesheet"/>
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="../Public/assets/css/demo.css" rel="stylesheet" />
+
+    <!--  Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href="../Public/assets/css/themify-icons.css" rel="stylesheet">
+
+    <link href="../Public/assets/css/jquery.dataTables.css" rel="stylesheet" type='text/css' >
+
+
+</head>
+<body>
+
+<div class="wrapper">
+	<div class="sidebar" data-background-color="white" data-active-color="danger">
+
+    <!--
+		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+	-->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="index.html" class="simple-text">
+                    Must Card
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <a href="../Views/index.html">
+                        <i class="ti-panel"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="table.html" class="dropdown-toggle" data-toggle="dropdown" >
+                        <i class="ti-view-list-alt"></i>
+                        <p >Windows Log</p>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#LogonTable">Logon Table</a></li>
+                        <li><a href="#NewServiceTable">New Service Table</a></li>
+                        <li><a href="#ProcessTable">Process Table</a></li>
+                        <li><a href="#FilewallTable">Filewall Table</a></li>
+                        <li><a href="#RuleTable">Rule Table</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="linux.html">
+                        <i class="ti-user"></i>
+                        <p>Linux Log</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ticket.html">
+                        <i class="ti-text"></i>
+                        <p>Ticket</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="icons.html">
+                        <i class="ti-pencil-alt2"></i>
+                        <p>Icons</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="maps.html">
+                        <i class="ti-map"></i>
+                        <p>Maps</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <i class="ti-bell"></i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+				<li class="active-pro">
+                    <a href="upgrade.html">
+                        <i class="ti-export"></i>
+                        <p>Upgrade to PRO</p>
+                    </a>
+                </li>
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+		<nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Windows Log</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="ti-panel"></i>
+								<p>Stats</p>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="ti-bell"></i>
+                                    <p class="notification">5</p>
+									<p>Notifications</p>
+									<b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Notification 1</a></li>
+                                <li><a href="#">Notification 2</a></li>
+                                <li><a href="#">Notification 3</a></li>
+                                <li><a href="#">Notification 4</a></li>
+                                <li><a href="#">Another notification</a></li>
+                              </ul>
+                        </li>
+						<li>
+                            <a href="#">
+								<i class="ti-settings"></i>
+								<p>Settings</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title" id="LogonTable">Logon Table</h4>
+                                <p class="category">Here is a subtitle for this table</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table id="table1" class="display" width="100%"></table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="card card-plain">
+                            <div class="header">
+                                <h4 class="title" id="NewServiceTable">New Service Table </h4>
+                                <p class="category">Here is a subtitle for this table</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table id="table2" class="display" width="100%"></table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="card card-plain">
+                            <div class="header">
+                                <h4 class="title" id="ProcessTable">Process Table </h4>
+                                <p class="category">Here is a subtitle for this table</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table id="table3" class="display" width="100%"></table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="card card-plain">
+                            <div class="header">
+                                <h4 class="title" id="FilewallTable">Filewall Table </h4>
+                                <p class="category">Here is a subtitle for this table</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table id="table4" class="display" width="100%"></table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="card card-plain">
+                            <div class="header">
+                                <h4 class="title" id="RuleTable">Rule Table </h4>
+                                <p class="category">Here is a subtitle for this table</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table id="table5" class="display" width="100%"></table>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+				<div class="copyright pull-right">
+                    <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by MustCard TEAM
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+</div>
+
+
+</body>
+    <!--socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="../Public/assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        var socket = io.connect('http://localhost:3000');
+        socket.on('news', function (data) {
+            $(document).ready(function() {
+                $('#table1').DataTable( {
+                    data: data,
+                    columns: [
+                        { title: "Time" },
+                        { title: "User" },
+                        { title: "IP" },
+                        { title: "Workstation" },
+                        { title: "Domain" }
+
+                    ]
+                } );
+            } );
+        });
+        socket.on('_newService', function (data) {
+            $(document).ready(function() {
+                $('#table2').DataTable( {
+                    data: data,
+                    columns: [
+                        { title: "Time" },
+                        { title: "Service Name" },
+                        { title: "Service Start Type" },
+                        { title: "Host" },
+                        { title: "Service Account" },
+                        { title: "Service Type" },
+                        { title: "Short Message" }
+                    ]
+                } );
+            } );
+        });
+        socket.on('_Process', function (data) {
+            $(document).ready(function() {
+                $('#table3').DataTable( {
+                    data: data,
+                    columns: [
+                        { title: "Time" },
+                        { title: "Host" },
+                        { title: "New Process ID" },
+                        { title: "New Process Name" },
+                        { title: "Creator Process ID" },
+                        { title: "Account Name" },
+                        { title: "Short Message" }
+                    ]
+                } );
+            } );
+        });
+
+        socket.on('_Filewall', function (data) {
+            $(document).ready(function() {
+                $('#table4').DataTable( {
+                    data: data,
+                    columns: [
+                        { title: "Time" },
+                        { title: "Modifying Application" },
+                        { title: "Value" },
+                        { title: "Host" },
+                        { title: "Short Message" },
+                        { title: "Type" },
+                        { title: "Modifying User" }
+                    ]
+                } );
+            } );
+        });
+
+        socket.on('_Process', function (data) {
+            $(document).ready(function() {
+                $('#table5').DataTable( {
+                    data: data,
+                    columns: [
+                        { title: "Time" },
+                        { title: "Protocol" },
+                        { title: "Reason" },
+                        { title: "Host" },
+                        { title: "Process Id" },
+                        { title: "IP Version" },
+                        { title: "Application Path" },
+                        //{ title: "Port" }
+                    ]
+                } );
+            } );
+        });
+
+    </script>
+
+
+    <!--   Core JS Files   -->
+    <!--<script src="../Public/assets/js/jquery-1.10.2.js" type="text/javascript"></script>-->
+	<script src="../Public/assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="../Public/assets/js/bootstrap-checkbox-radio.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="../Public/assets/js/bootstrap-notify.js"></script>
+
+
+    <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
+	<script src="../Public/assets/js/paper-dashboard.js"></script>
+
+	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+	<script src="../Public/assets/js/demo.js"></script>
+
+
+</html>
